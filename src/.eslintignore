@@ -1,0 +1,23 @@
+# svg files
+src/**/*.svg
+
+# css
+src/**/*.css
+
+# fonts
+src/**/*.otf
+
+# serviceworker file
+src/**/registerServiceWorker.js
+
+# build files
+build/*
+
+# static files
+src/static
+
+# snapshot files
+src/**/*.snap
+
+# data stores
+*.json

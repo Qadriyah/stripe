@@ -1,0 +1,13 @@
+{
+    "src/**/*.{js,jsx,ts,tsx,json,md}": [
+    "eslint 'src/**/*.{js,jsx}' -c .eslintrc.json --fix"
+    ],
+    "src/**/*.{css,scss}": [
+    "prettier-stylelint --write 'src/**/*.{css,scss}' "
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "pretty-quick --staged",
+    "react-scripts test src/ -b --forceExit --coverage --watchAll=false",
+    "git add"
+    ]
+}

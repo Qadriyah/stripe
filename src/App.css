@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -19,4 +19,21 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.Main-dashboard {
+  margin: 10px 20px 0 20px;
+}
+
+.grade-form {
+  box-sizing: border-box;
+  padding: 10px;
+  min-height: 300px;
+  width: 500px;
+  border: 1px solid rgba(216, 216, 216, 0.35);
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.05);
+  position: relative;
+  margin: 0 10px 10px 0;
 }
