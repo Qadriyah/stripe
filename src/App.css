@@ -1,5 +1,6 @@
 .App {
-  /* text-align: center; */
+  color: #4a4a4a;
+  /* font-family: Lato, sans-serif; */
 }
 
 .App-logo {
@@ -22,18 +23,95 @@
 }
 
 .Main-dashboard {
-  margin: 10px 20px 0 20px;
+  margin: 10px 10% 0 10%;
+  padding: 0 20% 0 20%;
 }
 
 .grade-form {
   box-sizing: border-box;
-  padding: 10px;
-  min-height: 300px;
-  width: 500px;
-  border: 1px solid rgba(216, 216, 216, 0.35);
-  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
   background-color: #ffffff;
-  box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.05);
-  position: relative;
-  margin: 0 10px 10px 0;
+}
+
+.grade-form__header {
+  background-color: #fafafa;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 20px;
+  border-bottom: solid thin #e4e4e4;
+}
+
+.grade-form__body {
+  padding: 20px;
+}
+
+.grade-form__body-1 {
+  padding: 20px;
+  background-color: #fafafa;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.toast__error-msg {
+  color: white;
+  background-color: red;
+  border: solid thin red;
+  padding: 10px 20px 10px 20px;
+  border-radius: 100px;
+  left: 0;
+}
+
+label {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+::placeholder {
+  font-size: 14px;
+}
+
+.form-control:focus {
+  border-color: #ced4da;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+h5 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.btn-primary {
+  background-color: #00ab80;
+  border-color: #00ab80;
+  font-weight: 700;
+  width: 150px !important;
+  font-size: 14px;
+}
+
+.btn-primary:hover {
+  background-color: #009770;
+  border-color: #009770;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.btn-general {
+  color: #00ab80;
+  background-color: #ffffff;
+  border-color: #009770;
+  font-weight: 700;
+  width: 150px !important;
+  font-size: 14px;
+}
+
+.btn-general:hover {
+  color: #00ab80;
+  background-color: rgba(0, 171, 128, 0.1);
+  border-color: #009770;
+  font-weight: 700;
+  font-size: 14px;
 }
