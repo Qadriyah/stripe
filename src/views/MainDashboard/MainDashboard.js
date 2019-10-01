@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ShippingAddress from '../../components/ShippingAddress/ShippingAddress';
-import DisplayCourses from '../../components/DisplayCourses';
 import PaymentMethond from '../../components/PaymentMethod/PaymentMethond';
+import './MainDashboard.scss';
 
 class MainDashboard extends Component {
   constructor(props) {

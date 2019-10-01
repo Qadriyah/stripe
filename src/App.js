@@ -1,8 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import './App.css';
-import MainDashboard from './views/OderDashboard/MainDashboard';
+import MainDashboard from './views/MainDashboard/MainDashboard';
 import store from './store';
+
+import './assets/index.scss';
 
 function App() {
   return (
