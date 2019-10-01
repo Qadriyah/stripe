@@ -1,6 +1,11 @@
 import React from 'react';
 import TextInput from './TextInput';
 
+/**
+ * Renders the text input component
+ *
+ * @param Object properties
+ */
 export const renderTextInput = properties => {
   const {
     name,
@@ -31,6 +36,11 @@ export const renderTextInput = properties => {
   );
 };
 
+/**
+ * Renders a button component
+ *
+ * @param Object properties
+ */
 export const renderButton = properties => {
   const { type, className, col, value, onClick } = properties;
 
@@ -46,6 +56,11 @@ export const renderButton = properties => {
   );
 };
 
+/**
+ * Renders the toggle button component
+ *
+ * @param React.Component component
+ */
 export const renderToggleButton = component => {
   const { handleButtonClick, status } = component.props;
   return (
