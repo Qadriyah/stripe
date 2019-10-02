@@ -1,5 +1,3 @@
-import React from 'react';
-import { notify } from 'react-notify-toast';
 import { isEmpty } from '../../utils';
 
 /**
@@ -21,9 +19,9 @@ export const attachToParentComponent = component => {
  * @param string className
  * @param bool type type of form submitted
  */
-export const showNotification = ({ message, className, type }) => {
-  notify.show(<div className={className}>{message}</div>, type, 5000, {});
-};
+// export const showNotification = ({ message, className, type }) => {
+//   notify.show(<div className={className}>{message}</div>, type, 5000, {});
+// };
 
 /**
  * Gets the data from the input components
@@ -31,7 +29,7 @@ export const showNotification = ({ message, className, type }) => {
  * @param Object inputs
  * @returns Object
  */
-export const getFormData = inputs => {
+export const processFormData = inputs => {
   const data = {};
   const errors = {};
   Object.values(inputs).forEach(input => {
@@ -40,6 +38,7 @@ export const getFormData = inputs => {
     if (required && isEmpty(input.getValue()))
       errors[name] = `${name} is required`;
   });
+
   return {
     data,
     isValid: isEmpty(errors)

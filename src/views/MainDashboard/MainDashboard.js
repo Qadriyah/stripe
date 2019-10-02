@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import ShippingAddress from '../../components/ShippingAddress/ShippingAddress';
-import PaymentMethond from '../../components/PaymentMethod/PaymentMethond';
+import ShippingAddress from '../../components/ShippingAddress/ShippingAddressContainer';
+import PaymentMethod from '../../components/PaymentMethod/PaymentMethodContainer';
 import './MainDashboard.scss';
 
 class MainDashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      status: true
-    };
-  }
+  state = {
+    status: true
+  };
 
   handleButtonClick = () => {
     const { status } = this.state;
@@ -26,7 +23,7 @@ class MainDashboard extends Component {
               handleButtonClick={this.handleButtonClick}
               status={status}
             />
-            <PaymentMethond
+            <PaymentMethod
               handleButtonClick={this.handleButtonClick}
               status={status}
             />

@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentMethod it renders without errors 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <React.Memo
+    handleButtonClick={[MockFunction]}
+    renderButton={[MockFunction]}
+    renderTextInput={[MockFunction]}
+    status={true}
+  />
+</ContextProvider>
+`;
+
+exports[`PaymentMethod it should render the toggle button 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(PaymentMethod)
+    handleButtonClick={[MockFunction]}
+    renderButton={[MockFunction]}
+    renderTextInput={[MockFunction]}
+    status={true}
+  >
+    <PaymentMethod
+      handleButtonClick={[MockFunction]}
+      renderButton={[Function]}
+      renderTextInput={[Function]}
+      status={true}
+    >
+      <div
+        className="grade-form mb-3"
+      >
+        <div
+          className="grade-form__header"
+        >
+          <h5>
+            Payment method
+          </h5>
+        </div>
+        <div
+          className="grade-form__body-1"
+        >
+          <div
+            className="row"
+          >
+            <Button
+              className="btn btn-general btn-lg btn-block"
+              col="col-5"
+              dataTest="component-button-submit"
+              onClick={[MockFunction]}
+              type="button"
+              value="Add credit card"
+            >
+              <div
+                className="col-5"
+              >
+                <input
+                  className="btn btn-general btn-lg btn-block"
+                  data-test="component-button-submit"
+                  onClick={[MockFunction]}
+                  type="button"
+                  value="Add credit card"
+                />
+              </div>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </PaymentMethod>
+  </Connect(PaymentMethod)>
+</Provider>
+`;

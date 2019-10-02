@@ -1,5 +1,6 @@
 import React from 'react';
 import TextInput from './TextInput';
+import Button from '../Button/Button';
 
 /**
  * Renders the text input component
@@ -42,37 +43,17 @@ export const renderTextInput = properties => {
  * @param Object properties
  */
 export const renderButton = properties => {
-  const { type, className, col, value, onClick } = properties;
+  const { type, className, col, value, onClick, dataTest } = properties;
 
   return (
-    <div className={col}>
-      <input
-        type={type}
-        className={className}
-        value={value}
-        onClick={onClick}
-      />
-    </div>
-  );
-};
-
-/**
- * Renders the toggle button component
- *
- * @param React.Component component
- */
-export const renderToggleButton = component => {
-  const { handleButtonClick, status } = component.props;
-  return (
-    <div className="row">
-      {renderButton({
-        type: 'button',
-        className: 'btn btn-general btn-lg btn-block',
-        col: 'col-5',
-        value: status ? 'Add credit card' : 'Add address',
-        onClick: handleButtonClick
-      })}
-    </div>
+    <Button
+      col={col}
+      type={type}
+      className={className}
+      value={value}
+      onClick={onClick}
+      dataTest={dataTest}
+    />
   );
 };
 
