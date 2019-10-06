@@ -8,7 +8,7 @@ src/**/*.css
 src/**/*.otf
 
 # serviceworker file
-src/**/registerServiceWorker.js
+src/**/serviceWorker.js
 
 # build files
 build/*

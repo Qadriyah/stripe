@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput renders without failures 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    htmlFor="name"
+  >
+    Name on card
+  </label>
+  <input
+    className="form-control form-control-lg"
+    id="name"
+    name="name"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    pattern={null}
+    placeholder="Full name"
+    required={true}
+    type="text"
+    value=""
+  />
+</div>
+`;

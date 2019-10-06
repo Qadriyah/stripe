@@ -5,14 +5,12 @@ import { attachToParentComponent } from './helper';
 import { isEmpty } from '../../utils';
 
 class TextInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: '',
-      clientError: ''
-    };
-    this.textInputRef = React.createRef();
-  }
+  state = {
+    value: '',
+    clientError: ''
+  };
+
+  textInputRef = React.createRef();
 
   componentDidMount() {
     attachToParentComponent(this);
@@ -43,7 +41,7 @@ class TextInput extends Component {
    */
   focus = () => this.textInputRef.current.focus();
 
-  onBlur = () => {
+  blur = () => {
     const { value } = this.state;
     const currentNode = this.textInputRef.current || null;
     if (currentNode.required && isEmpty(value)) {
@@ -55,22 +53,23 @@ class TextInput extends Component {
   };
 
   /**
-   * Alert if clicked outside of element
+   * Renders the input field label
+   *
+   * @param string label
+   * @param string name
+   * @returns Object label|null
    */
-  handleClickOutsideInputField = () => {
-    const { value } = this.state;
-    const currentNode = this.textInputRef.current || null;
-    if (document.activeElement === currentNode && isEmpty(value)) {
-      this.setState({
-        clientError:
-          currentNode && currentNode.required ? 'This field is required' : ''
-      });
-    }
-    if (!isEmpty(currentNode)) this.textInputRef.current.blur();
-  };
+  renderLable = (label, name) =>
+    !isEmpty(label) ? (
+      // eslint-disable-next-line jsx-a11y/label-has-for
+      <label htmlFor={name}>{label}</label>
+    ) : null;
 
-  render() {
-    const { value, clientError } = this.state;
+  /**
+   * Gets the properties of the input field from the component props
+   * @returns Object
+   */
+  getTextInputProps = () => {
     const {
       name,
       placeholder,
@@ -81,30 +80,42 @@ class TextInput extends Component {
       label,
       required
     } = this.props;
-    const error = clientError || serverError;
-    const finalLabel = !isEmpty(label) ? (
-      // eslint-disable-next-line jsx-a11y/label-has-for
-      <label htmlFor={name}>{label}</label>
-    ) : null;
+    return {
+      name,
+      placeholder,
+      type,
+      pattern,
+      className,
+      serverError,
+      label,
+      required
+    };
+  };
+
+  render() {
+    const { value, clientError } = this.state;
+    const props = this.getTextInputProps();
+
+    const error = clientError || props.serverError;
 
     return (
       <div className="form-group">
-        {finalLabel}
+        {this.renderLable(props.label, props.name)}
         <input
-          id={name}
-          name={name}
-          placeholder={placeholder}
+          id={props.name}
+          name={props.name}
+          placeholder={props.placeholder}
           value={value}
-          type={type}
+          type={props.type}
           onChange={this.handleChange}
-          onClick={this.focus}
-          pattern={pattern}
+          onFocus={this.focus}
+          onBlur={this.blur}
+          pattern={props.pattern}
           ref={this.textInputRef}
-          required={required}
-          className={classnames(className, {
+          required={props.required}
+          className={classnames(props.className, {
             'is-invalid': error
           })}
-          onBlur={this.onBlur}
         />
         {error && <div className="invalid-feedback">{error}</div>}
       </div>
@@ -118,8 +129,8 @@ TextInput.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
   pattern: PropTypes.string,
-  className: PropTypes.string.isRequired,
-  serverError: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  serverError: PropTypes.string,
   required: PropTypes.bool
 };
 
@@ -127,7 +138,9 @@ TextInput.defaultProps = {
   type: 'text',
   pattern: null,
   label: '',
-  required: false
+  required: false,
+  className: 'form-control form-control-lg',
+  serverError: ''
 };
 
 export default TextInput;
