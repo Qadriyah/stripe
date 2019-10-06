@@ -7,35 +7,21 @@ import Button from '../Button/Button';
  *
  * @param Object properties
  */
-export const renderTextInput = properties => {
-  const {
-    name,
-    placeholder,
-    type,
-    pattern,
-    className,
-    serverError,
-    parent,
-    label,
-    col,
-    required
-  } = properties;
-  return (
-    <div className={col}>
-      <TextInput
-        name={name}
-        placeholder={placeholder}
-        label={label}
-        className={className}
-        serverError={serverError}
-        pattern={pattern}
-        parent={parent}
-        type={type}
-        required={required}
-      />
-    </div>
-  );
-};
+export const renderTextInput = properties => (
+  <div className={properties.col}>
+    <TextInput
+      name={properties.name}
+      placeholder={properties.placeholder}
+      label={properties.label}
+      className={properties.className}
+      serverError={properties.serverError}
+      pattern={properties.pattern}
+      parent={properties.parent}
+      type={properties.type}
+      required={properties.required}
+    />
+  </div>
+);
 
 /**
  * Renders a button component
@@ -55,6 +41,16 @@ export const renderButton = properties => {
       dataTest={dataTest}
     />
   );
+};
+
+export const renderToggleButton = (value, component) => {
+  const { handleButtonClick } = component.props;
+  return renderButton({
+    className: 'btn btn-general btn-lg btn-block',
+    col: 'col-5',
+    value,
+    onClick: handleButtonClick
+  });
 };
 
 export default {

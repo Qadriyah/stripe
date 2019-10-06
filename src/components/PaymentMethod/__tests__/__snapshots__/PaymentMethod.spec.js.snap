@@ -62,8 +62,8 @@ exports[`PaymentMethod it should render the toggle button 1`] = `
   >
     <PaymentMethod
       handleButtonClick={[MockFunction]}
-      renderButton={[Function]}
-      renderTextInput={[Function]}
+      renderButton={[MockFunction]}
+      renderTextInput={[MockFunction]}
       status={true}
     >
       <div

@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { processFormData } from '../TextInputs/helper';
+import {
+  renderTextInput,
+  renderButton,
+  renderToggleButton
+} from '../TextInputs/inputHelpers';
 import { isEmpty } from '../../utils';
 import '../ShippingAddress/ShippingAddress.scss';
 
@@ -25,7 +30,6 @@ class PaymentMethod extends Component {
   };
 
   renderForm = () => {
-    const { renderTextInput, renderButton } = this.props;
     return (
       <form noValidate>
         <div className="row">
@@ -82,21 +86,6 @@ class PaymentMethod extends Component {
     );
   };
 
-  renderFormBody = ({ status, renderButton, handleButtonClick }) => {
-    return !status ? (
-      this.renderForm()
-    ) : (
-      <div className="row">
-        {renderButton({
-          className: 'btn btn-general btn-lg btn-block',
-          col: 'col-5',
-          value: 'Add credit card',
-          onClick: handleButtonClick
-        })}
-      </div>
-    );
-  };
-
   render() {
     const { status } = this.props;
     const { message, className } = this.state;
@@ -107,7 +96,15 @@ class PaymentMethod extends Component {
           <div className="grade-form__header">
             <h5>Payment method</h5>
           </div>
-          <div className={styles}>{this.renderFormBody(this.props)}</div>
+          <div className={styles}>
+            {!status ? (
+              this.renderForm()
+            ) : (
+              <div className="row">
+                {renderToggleButton('Add credit card', this)}
+              </div>
+            )}
+          </div>
           {!isEmpty(message) && <div className={className}>{message}</div>}
         </div>
       </>
@@ -116,9 +113,7 @@ class PaymentMethod extends Component {
 }
 
 PaymentMethod.propTypes = {
-  status: PropTypes.bool.isRequired,
-  renderTextInput: PropTypes.func.isRequired,
-  renderButton: PropTypes.func.isRequired
+  status: PropTypes.bool.isRequired
 };
 
 export default PaymentMethod;

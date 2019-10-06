@@ -62,8 +62,8 @@ exports[`PaymentMethod it should render the toggle button 1`] = `
   >
     <ShippingAddress
       handleButtonClick={[MockFunction]}
-      renderButton={[Function]}
-      renderTextInput={[Function]}
+      renderButton={[MockFunction]}
+      renderTextInput={[MockFunction]}
       status={false}
     >
       <div
@@ -88,7 +88,7 @@ exports[`PaymentMethod it should render the toggle button 1`] = `
               dataTest="component-button-submit"
               onClick={[MockFunction]}
               type="button"
-              value="Add credit card"
+              value="Add address"
             >
               <div
                 className="col-5"
@@ -98,7 +98,7 @@ exports[`PaymentMethod it should render the toggle button 1`] = `
                   data-test="component-button-submit"
                   onClick={[MockFunction]}
                   type="button"
-                  value="Add credit card"
+                  value="Add address"
                 />
               </div>
             </Button>

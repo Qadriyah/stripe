@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import courseReducer from './courseReducer';
+import addressReducer from './addressReducer';
 
 export default combineReducers({
-  courses: courseReducer
+  addresses: addressReducer
 });
