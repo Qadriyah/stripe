@@ -1,11 +1,8 @@
 #### Description
-
 ---
 
 #### Type of change
-
 ---
-
 Please select the relevant option
 
 - [x] Bug fix (non-breaking change which fixes an issue)
@@ -14,25 +11,19 @@ Please select the relevant option
 - [x] This change requires a documentation update
 
 #### Any Background context?:
-
 ---
 
 #### How Has This Been Tested?
-
 ---
-
 - [x] End to end
 - [x] Integration
 - [x] Unit
 
 #### How Should This Be Manually Tested?
-
 ---
 
 #### Checklist:
-
 ---
-
 - [x] My code follows the style guidelines of this project
 - [x] I have linted my code prior to submission
 - [x] I have made corresponding changes to the documentation
@@ -40,10 +31,8 @@ Please select the relevant option
 - [x] I have added tests that prove my fix is effective or that my feature works
 - [x] New and existing unit tests pass locally with my changes
 
-#### JIRA
-
+#### PivotalTracker
 ---
 
 #### Screenshots (If applicable):
-
 ---

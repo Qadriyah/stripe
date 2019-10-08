@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import configureStore from './redux/store/configureStore';
 import * as serviceWorker from './serviceWorker';
 import MainDashboard from './views/MainDashboard/MainDashboard';
 import './assets/index.scss';
+
+const store = configureStore({});
 
 ReactDOM.render(
   <Provider store={store}>

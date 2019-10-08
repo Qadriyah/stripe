@@ -1,15 +1,15 @@
-import { ADD_COURSE } from '../actions/types';
+import { ADD_ADDRESS } from '../actions/types';
 
 const initialState = {
-  courses: []
+  addresses: []
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case ADD_COURSE:
+    case ADD_ADDRESS:
       return {
         ...state,
-        courses: action.payload
+        addresses: action.payload
       };
     default:
       return state;

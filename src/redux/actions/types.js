@@ -1,5 +1,5 @@
-export const ADD_COURSE = 'ADD_COURSE';
+export const ADD_ADDRESS = 'ADD_ADDRESS';
 
 export default {
-  ADD_COURSE
+  ADD_ADDRESS
 };
