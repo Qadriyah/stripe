@@ -45,6 +45,38 @@ export const processFormData = inputs => {
   };
 };
 
+/**
+ * Clears the form input fields
+ * @param Object inputs
+ */
+export const clearFormFields = inputs => {
+  Object.values(inputs).forEach(input => {
+    input.clearInputField();
+  });
+};
+
+/**
+ * Handle form submission
+ * @param component parent component
+ */
+export const handleSubmit = (event, component) => {
+  event.preventDefault();
+  const { inputs } = component.state;
+  const inputData = processFormData(inputs);
+  let message = 'Data submitted successfully';
+  let className = 'toast__message toast__message_success m-auto';
+  if (!inputData.isValid) {
+    message = 'All fields are required';
+    className = 'toast__message toast__message_error m-auto';
+  } else {
+    clearFormFields(inputs);
+  }
+  component.setState({
+    message,
+    className
+  });
+};
+
 export default {
   attachToParentComponent
 };

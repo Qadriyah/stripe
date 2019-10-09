@@ -5,6 +5,8 @@ import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import PaymentMethod from '../PaymentMethodContainer';
 
+jest.useFakeTimers();
+
 describe('PaymentMethod', () => {
   const mockStore = configureStore([Thunk]);
   const store = mockStore({});
@@ -79,5 +81,14 @@ describe('PaymentMethod', () => {
   test('it should render the toggle button', () => {
     const wrapper = setup({ status: true }, true);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  test('componentDidUpdate method', () => {
+    jest.advanceTimersByTime(5000);
+    const wrapper = setup({ status: false }, true);
+    const component = wrapper.find('PaymentMethod').instance();
+    component.componentDidUpdate();
+    expect(setTimeout).toHaveBeenCalled();
+    expect(component.state.message.trim()).toEqual('');
   });
 });
