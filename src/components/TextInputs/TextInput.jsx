@@ -37,6 +37,13 @@ class TextInput extends Component {
   };
 
   /**
+   * Clears the text field
+   */
+  clearInputField = () => {
+    this.setState({ value: '' });
+  };
+
+  /**
    * Manages the focus of the input element
    */
   focus = () => this.textInputRef.current.focus();

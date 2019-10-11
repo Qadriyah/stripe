@@ -5,10 +5,30 @@ body {
   color: $font-color;
 }
 
+@keyframes toast {
+  0% {
+    top: -10px;
+  }
+}
+
+@-webkit-keyframes toast {
+  0% {
+    top: -10px;
+  }
+}
+
 .toast__message {
   color: white;
   padding: 10px 20px 10px 20px;
   border-radius: 100px;
+  z-index: 9999;
+  position: absolute;
+  top: 5px;
+  left: 30%;
+  -webkit-animation-name: toast;
+  -webkit-animation-duration: 1s;
+  animation-name: toast;
+  animation-duration: 1s;
 
   &_error {
     background-color: red;

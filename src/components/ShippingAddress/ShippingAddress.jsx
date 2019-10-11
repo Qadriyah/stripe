@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { processFormData } from '../TextInputs/helper';
+import { handleSubmit } from '../TextInputs/helper';
 import {
   renderTextInput,
   renderButton,
@@ -11,26 +11,17 @@ import './ShippingAddress.scss';
 
 class ShippingAddress extends Component {
   state = {
+    // eslint-disable-next-line react/no-unused-state
     inputs: {},
     message: '',
     className: ''
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    const { inputs } = this.state;
-    const inputData = processFormData(inputs);
-    let message = 'Data submitted successfully';
-    let className = 'toast__message toast__message_success';
-    if (!inputData.isValid) {
-      message = 'All fields are required';
-      className = 'toast__message toast__message_error';
-    }
-    this.setState({
-      message,
-      className
-    });
-  };
+  componentDidUpdate() {
+    setTimeout(() => {
+      this.setState({ message: '' });
+    }, 5000);
+  }
 
   renderForm = () => {
     return (
@@ -85,7 +76,7 @@ class ShippingAddress extends Component {
             type: 'submit',
             col: 'col-5',
             value: 'Save',
-            onClick: this.handleSubmit
+            onClick: event => handleSubmit(event, this)
           })}
         </div>
       </form>
